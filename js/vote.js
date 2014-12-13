@@ -1,10 +1,12 @@
 function begin () {
 	var panelScrolling = false;
-	var startY = 0;
+	var Ms = 0;
+	var Bs = 0;
 
 	$("#panel-scroll").mousedown(function (event) {
 		panelScrolling = true;
-		startY = event.pageY-$("#panel-scroll").position().top;
+		Ms = event.pageY;
+		Bs = $("#panel-scroll").position().top;
 	});
 
 	$("#panel").mouseup(function () {
@@ -12,12 +14,33 @@ function begin () {
 	});
 
 	$("#panel").mousemove(function (event) {
-		var mul = ($("#panel")[0].scrollHeight-$("#panel").height())/$("#panel").height();
+		var f = $("#panel")[0].scrollHeight;
+		var h = $("#panel").height();
+		var b = $("#panel-scroll").height();
+		var Mc = event.pageY;
+
+		var o = 0;
+		var e = 0;
+
+		if (f > h) {
+
+			if (Mc-(Ms-Bs) < h-b)  {
+				o = (Mc-(Ms-Bs))/(h-b)*(f-h);		
+				e = o + Mc - (Ms-Bs);
+			} else {
+				o = (f-h);		
+				e = o + h-b;
+			}
+
+			if (e < 0) {
+				e = 0;
+			}
+		}
 
 		if (panelScrolling) {
 			event.preventDefault();
-			$("#panel").scrollTop(event.pageY*mul);
-			$("#panel-scroll").css("top", ((event.pageY*mul+event.pageY-startY))+"px");
+			$("#panel").scrollTop(o);
+			$("#panel-scroll").css("top", e+"px");
 		}
 	});
 
