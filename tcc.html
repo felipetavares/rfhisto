@@ -9,16 +9,36 @@
 		</style>
 
 		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/webgl.js"></script>
 		<script type="text/javascript" src="js/home.js"></script>
+
+		<!-- Default shaders -->
+		<script id="v-default" type="shader/vertex">
+			attribute vec3 vertexPosition;
+
+			uniform mat4 pMatrix;
+			uniform mat4 mvMatrix;
+			
+			void main(void) {
+				gl_Position = pMatrix * mvMatrix * vec4(vertexPosition, 1);
+			}
+		</script>
+		<script id="f-default" type="shader/fragment">
+			precision mediump float;
+
+			void main(void) {
+				gl_FragColor = vec4(0.2, 0.4, 0.4, 1);
+			}
+		</script>
 	</head>
 	
 	<body onload="begin();">
 		<div class="backbutton">
 		</div>
 
-		<div id="corpo">
-			Visualização WebGL
-		</div>
+		<canvas id="corpo">
+			Seu brownser não suporta WebGL TODO: Dicas para habilitar  WebGL
+		</canvas>
 		
 		<div id="menu">
 			<div id="menu-a">
@@ -42,6 +62,6 @@
 			</div>
 		</div>
 
-		<div id="rodape">Menu</div>
+		<div id="rodape">Menu <span class="key float-right">Enter</span></div>
 	</body>
 </html>

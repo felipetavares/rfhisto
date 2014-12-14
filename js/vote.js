@@ -9,14 +9,14 @@ function begin () {
 		Bs = $("#panel-scroll").position().top;
 	});
 
-	$("#panel").mouseup(function () {
+	$("body").mouseup(function () {
 		panelScrolling = false;
 	});
 
-	$("#panel").mousemove(function (event) {
+	$("body").mousemove(function (event) {
 		var f = $("#panel")[0].scrollHeight;
 		var h = $("#panel").height();
-		var b = $("#panel-scroll").height();
+		var b = $("#panel-scroll").height()+2;
 		var Mc = event.pageY;
 
 		var o = 0;
@@ -35,6 +35,9 @@ function begin () {
 			if (e < 0) {
 				e = 0;
 			}
+
+			if (e-o > h-b)
+				e = h-b+o;
 		}
 
 		if (panelScrolling) {
@@ -49,7 +52,7 @@ function begin () {
 	$(".panel-item").click (function () {
 		if (selectedItem)
 			$(selectedItem).css("background", "transparent");
-		$(this).css("background", "rgba(255,255,255,0.6)");
+		$(this).css("background", "#4090b0");
 		selectedItem = this;
 	});
 

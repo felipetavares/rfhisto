@@ -9,6 +9,8 @@ body {
 	min-height: 512px;
 
 	font-family: bowhouse;
+
+	overflow: hidden;
 }
 
 #corpo {
@@ -146,9 +148,9 @@ a {
 	position: absolute;
 
 	top: 0;
-	right: 2px;
+	right: 0px;
 
-	background: #ddd;
+	background: #3080a0;
 
 	width: 12px;
 	height: 64px;
@@ -190,7 +192,8 @@ a {
 	position: absolute;
 
 	bottom: 50px;
-	right: 50px;
+	left: 50%;
+	margin-left: 178px;
 
 	width: 50px;
 	height: 50px;
@@ -211,7 +214,8 @@ a {
 	position: absolute;
 
 	bottom: 50px;
-	left: 306px;
+	left: 50%;
+	margin-left: 28px;
 
 	width: 50px;
 	height: 50px;
@@ -226,4 +230,23 @@ a {
 
 .negative:hover {
 	background-color: rgba(255,255,255,0.5);
+}
+
+.key {
+	font-size: 26px;
+
+	background: white;
+	color: black;
+
+	border-radius: 2px;
+
+	border-bottom: 8px solid gray;
+
+	padding: 4px;
+
+	margin: 2px;
+}
+
+.float-right {
+	float: right;
 }
