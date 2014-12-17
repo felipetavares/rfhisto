@@ -1,0 +1,40 @@
+#sidebar {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	width: 256px;
+	height: 100%;
+
+	background: rgba(255,255,255,0.5);
+
+	overflow: hidden;
+
+	/*box-shadow: 1px 0px 5px 0px black;*/
+}
+
+#sidebar-scroll {
+	position: absolute;
+
+	top: 0;
+	right: 0px;
+
+	background: #81b2ff;
+
+	width: 12px;
+	height: 64px;
+
+	cursor: pointer;
+
+	box-shadow: 1px 0px 5px 1px black;
+}
+
+.sidebar-item {
+	color: black;
+
+	font-size: 32px;
+	text-align: center;
+
+	cursor: pointer;
+}
