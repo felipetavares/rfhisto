@@ -71,17 +71,104 @@ function inicia () {
 	// Vertices
 	render.createBuffer ("vertices",
 		new Float32Array([
-			0,-1,0,
-			-1,1,0,
-			1,1,0,
+			0.5 , -0.5 , 0.5 ,
+			-0.5 , -0.5 , 0.5 ,
+			-0.5 , -0.5 , -0.5 ,
+			-0.5 , 0.5 , -0.5 ,
+			-0.5 , 0.5 , 0.5 ,
+			0.5 , 0.5 , 0.5 ,
+			0.5 , 0.5 , -0.5 ,
+			0.5 , 0.5 , 0.5 ,
+			0.5 , -0.5 , 0.5 ,
+			0.5 , -0.5 , 0.5 ,
+			0.5 , 0.5 , 0.5 ,
+			-0.5 , 0.5 , 0.5 ,
+			-0.5 , 0.5 , 0.5 ,
+			-0.5 , 0.5 , -0.5 ,
+			-0.5 , -0.5 , -0.5 ,
+			0.5 , 0.5 , -0.5 ,
+			0.5 , -0.5 , -0.5 ,
+			-0.5 , -0.5 , -0.5 ,
+			0.5 , -0.5 , -0.5 ,
+			0.5 , -0.5 , 0.5 ,
+			-0.5 , -0.5 , -0.5 ,
+			0.5 , 0.5 , -0.5 ,
+			-0.5 , 0.5 , -0.5 ,
+			0.5 , 0.5 , 0.5 ,
+			0.5 , -0.5 , -0.5 ,
+			0.5 , 0.5 , -0.5 ,
+			0.5 , -0.5 , 0.5 ,
+			-0.5 , -0.5 , 0.5 ,
+			0.5 , -0.5 , 0.5 ,
+			-0.5 , 0.5 , 0.5 ,
+			-0.5 , -0.5 , 0.5 ,
+			-0.5 , 0.5 , 0.5 ,
+			-0.5 , -0.5 , -0.5 ,
+			-0.5 , 0.5 , -0.5 ,
+			0.5 , 0.5 , -0.5 ,
+			-0.5 , -0.5 , -0.5 ,
 		]),
 		3,false
 	);
 
-	// Create a triangle
-	render.createBuffer ("triangle",
+	// Normals
+	render.createBuffer ("vertices-normals",
+		new Float32Array([
+			0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+			-0.5773 , 0.5773 , -0.5773 ,
+			-0.5773 , 0.5773 , 0.5773 ,
+			0.5773 , 0.5773 , 0.5773 ,
+			0.5773 , 0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , 0.5773 ,
+			0.5773 , -0.5773 , 0.5773 ,
+			0.5773 , -0.5773 , 0.5773 ,
+			0.5773 , 0.5773 , 0.5773 ,
+			-0.5773 , 0.5773 , 0.5773 ,
+			-0.5773 , 0.5773 , 0.5773 ,
+			-0.5773 , 0.5773 , -0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , -0.5773 ,
+			0.5773 , -0.5773 , -0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+			0.5773 , -0.5773 , -0.5773 ,
+			0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , -0.5773 ,
+			-0.5773 , 0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , 0.5773 ,
+			0.5773 , -0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , -0.5773 ,
+			0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , 0.5773 ,
+			0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , 0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , 0.5773 ,
+			-0.5773 , 0.5773 , 0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+			-0.5773 , 0.5773 , -0.5773 ,
+			0.5773 , 0.5773 , -0.5773 ,
+			-0.5773 , -0.5773 , -0.5773 ,
+		]),
+		3,false
+	);
+
+	// Create a cube
+	render.createBuffer ("cube",
 		new Uint16Array([
-			0,1,2,0
+			0, 1, 2, 3,
+			4, 5, 6,
+			7, 8, 9,
+			10, 11, 12,
+			13, 14, 15,
+			16, 17, 18,
+			19, 20, 21,
+			22, 23, 24,
+			25, 26, 27,
+			28, 29, 30,
+			31, 32, 33,
+			34, 35
 		]),
 		1,true
 	);
@@ -100,16 +187,18 @@ function inicia () {
 
 // Desenha com WebGL
 function draw () {
-	render.perspective (3.14/4, render.canvas.width/render.canvas.height,
+	mat4.perspective (render.pMatrix,
+					  3.14/4, render.canvas.width/render.canvas.height,
 						1, 100);
-	render.mvMatrix = mIdentity();
+	
+	mat4.identity(render.mvMatrix);
+
+	mat4.translate (render.mvMatrix, render.mvMatrix, [0,0,-5]);
 
 	// Rotate the thing	
-	render.mvMatrix = mRotateY (render.mvMatrix, new Date()/100);
-	render.mvMatrix = mRotateX (render.mvMatrix, new Date()/1000);
-	render.mvMatrix = mRotateX (render.mvMatrix, new Date()/1000);
+	mat4.rotateY (render.mvMatrix, render.mvMatrix, new Date()/1000);
+	mat4.rotateX (render.mvMatrix, render.mvMatrix, new Date()/1000);
 
-	render.mvMatrix = mTranslate (render.mvMatrix, [0,0,5]);
 
 	// Rotate the thing	
 	// render.mvMatrix = mRotateY (render.mvMatrix, new Date()/1000);
@@ -119,8 +208,9 @@ function draw () {
 	
 	// Use the vertices we created
 	render.useBuffer("vertices","vertexPosition");
-	
-	render.useBuffer("triangle",null);
+	render.useBuffer("vertices-normals", "vertexNormal");
+
+	render.useBuffer("cube",null);
 	render.clear();
 	render.draw(false);
 

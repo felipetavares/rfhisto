@@ -2,76 +2,6 @@ function preventEvent (evt) {
 	evt.preventDefault();
 }
 
-function mMul (m0, m1) {
-	// Result
-	var r = [0,0,0,0,
-			 0,0,0,0,
-			 0,0,0,0,
-			 0,0,0,0];
-	var i,j,k;
-	
-	for (k=0;k<4;k++)
-		for (j=0;j<4;j++) {
-			for (i=0;i<4;i++) {
-				r[j+4*k] += m0[i+4*k]*m1[4*i+j];
-			}
-		}
-	
-	return r;
-}
-
-function mRotateX (m0, a) {
-	var rX = [
-		1,0,0,0,
-		0,Math.cos(a),-Math.sin(a),0,
-		0,Math.sin(a),Math.cos(a),0,
-		0,0,0,1
-	];
-	
-	return mMul(m0,rX);
-}
-
-function mRotateY (m0, a) {
-	var rY = [
-		Math.cos(a),0,Math.sin(a),0,
-		0,1,0,0,
-		-Math.sin(a),0,Math.cos(a),0,
-		0,0,0,1
-	];
-	
-	return mMul(m0,rY);
-}
-
-function mRotateZ (m0, a) {
-	var rZ = [
-		Math.cos(a),-Math.sin(a),0,0,
-		Math.sin(a),Math.cos(a),0,0,
-		0,0,1,0,
-		0,0,0,1
-	];
-	
-	return mMul(m0,rZ);
-}
-
-function mTranslate (m0, v) {
-	var r = [];
-	for (var i=0;i<16;i++)
-		r[i] = m0[i];
-	r[12] -= v[0];
-	r[13] -= v[1];
-	r[14] -= v[2];
-	return r;
-}
-
-function mIdentity () {
-	return [
-		1,0,0,0,
-		0,1,0,0,
-		0,0,1,0,
-		0,0,0,1
-	];
-}
-
 render = new function () {
 	this.gl = null;
 	
@@ -84,19 +14,9 @@ render = new function () {
 	this.activeShader = null;
 	this.activeBuffer = null;
 
-	this.pMatrix = [
-		1,0,0,0,
-		0,1,0,0,
-		0,0,1,0,
-		0,0,0,1
-	];
-	
-	this.mvMatrix = [
-		1,0,0,0,
-		0,1,0,0,
-		0,0,1,0,
-		0,0,0,1
-	];
+	this.pMatrix = mat4.create();
+	this.mvMatrix = mat4.create();
+	this.nMatrix = mat4.create();
 	
 	this.fail = function () {
 		alert ("No Web-GL.")
@@ -122,13 +42,17 @@ render = new function () {
 		
 		if (this.gl) {
 			this.makeShader ("default", "v-default", "f-default",
-			{vertexPosition: "vertexPosition"},
+			{vertexPosition: "vertexPosition",
+			 vertexNormal: "vertexNormal"},
 			{pMatrix: "pMatrix",
-			 mvMatrix: "mvMatrix"});
+			 mvMatrix: "mvMatrix",
+			 nMatrix: "nMatrix"});
 			window.onresize();
 		} else {
 			this.fail();
 		}
+
+		this.gl.enable(this.gl.DEPTH_TEST);
 	}
 
 	this.useFrameBuffer = function (name) {
@@ -312,36 +236,19 @@ render = new function () {
 	}
 	
 	this.draw = function (wireframe) {
+		mat4.invert(this.nMatrix, this.mvMatrix);
+		mat4.transpose(this.nMatrix, this.nMatrix);
+
 		this.gl.uniformMatrix4fv(this.activeShader.uUniforms.pMatrix, false, new Float32Array (this.pMatrix));
 		this.gl.uniformMatrix4fv(this.activeShader.uUniforms.mvMatrix, false, new Float32Array (this.mvMatrix));
-		this.gl.drawElements(wireframe?this.gl.LINE_STRIP:this.gl.TRIANGLE_STRIP, this.activeBuffer.len, this.gl.UNSIGNED_SHORT, 0);	
+		this.gl.uniformMatrix4fv(this.activeShader.uUniforms.nMatrix, false, new Float32Array (this.nMatrix));
+		this.gl.drawElements(wireframe?this.gl.LINE_STRIP:this.gl.TRIANGLES, this.activeBuffer.len, this.gl.UNSIGNED_SHORT, 0);	
 	}
 	
 	this.good = function () {
 		return true && this.gl;
 	}
-	
-	this.perspective = function (fovy, aspect, near, far) {
-	   var f = 1.0 / Math.tan(fovy / 2),
-			nf = 1 / (near - far);
-		this.pMatrix[0] = f / aspect;
-		this.pMatrix[1] = 0;
-		this.pMatrix[2] = 0;
-		this.pMatrix[3] = 0;
-		this.pMatrix[4] = 0;
-		this.pMatrix[5] = f;
-		this.pMatrix[6] = 0;
-		this.pMatrix[7] = 0;
-		this.pMatrix[8] = 0;
-		this.pMatrix[9] = 0;
-		this.pMatrix[10] = (far + near) * nf;
-		this.pMatrix[11] = -1;
-		this.pMatrix[12] = 0;
-		this.pMatrix[13] = 0;
-		this.pMatrix[14] = (2 * far * near) * nf;
-		this.pMatrix[15] = 0;
-	}
-	
+
 	window.onresize = function () {
 		render.canvas.width = window.innerWidth;
 		render.canvas.height = window.innerHeight;
