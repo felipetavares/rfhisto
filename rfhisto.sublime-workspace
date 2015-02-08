@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"alinh",
+				"alinharCom"
+			],
+			[
+				"alin",
+				"alinhaCom"
+			],
+			[
+				"vertices",
+				"vertices-normals"
+			],
+			[
+				"create",
+				"createBuffer"
+			],
+			[
 				"font-s",
 				"font-style"
 			],
@@ -23,31 +39,47 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1474,
+				"buffer_size": 3071,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": ".gitignore",
+			"file": "js/universo.js",
 			"settings":
 			{
-				"buffer_size": 58,
+				"buffer_size": 694,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "vote.html",
+			"file": "votar.html",
 			"settings":
 			{
-				"buffer_size": 3292,
+				"buffer_size": 3380,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "css/main.css",
+			"file": "js/mat4.js",
 			"settings":
 			{
-				"buffer_size": 2532,
+				"buffer_size": 35233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/webgl.js",
+			"settings":
+			{
+				"buffer_size": 7135,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/principal.css",
+			"settings":
+			{
+				"buffer_size": 2552,
 				"line_ending": "Windows"
 			}
 		},
@@ -55,15 +87,15 @@
 			"file": "css/sidebar.css",
 			"settings":
 			{
-				"buffer_size": 447,
+				"buffer_size": 450,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/vote.js",
+			"file": "js/votar.js",
 			"settings":
 			{
-				"buffer_size": 38,
+				"buffer_size": 39,
 				"line_ending": "Windows"
 			}
 		},
@@ -71,16 +103,33 @@
 			"file": "js/sidebar.js",
 			"settings":
 			{
-				"buffer_size": 1347,
+				"buffer_size": 1361,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/home.js",
+			"file": "js/principal.js",
 			"settings":
 			{
-				"buffer_size": 2229,
+				"buffer_size": 6628,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/cube.obj",
+			"settings":
+			{
+				"buffer_size": 766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "0.577300,-0.577300,0.577300,-0.577300,-0.577300,0.577300,-0.577300,-0.577300,-0.577300,-0.577300,0.577300,-0.577300,-0.577300,0.577300,0.577300,0.577300,0.577300,0.577300,0.577300,0.577300,-0.577300,0.577300,-0.577300,-0.577300,",
+			"settings":
+			{
+				"buffer_size": 228,
+				"line_ending": "Windows",
+				"name": "0.577300,-0.577300,0.577300,-0.577300,-0.577300,0."
 			}
 		}
 	],
@@ -108,6 +157,14 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Felipe/Documents/Development/rfhisto/js/mat4.js",
+		"/C/Users/Felipe/Documents/Development/rfhisto/js/cube.mtl",
+		"/C/Users/Felipe/Documents/Development/rfhisto/js/cube.obj",
+		"/C/Users/Felipe/Documents/Development/rfhisto/.gitignore",
+		"/C/Users/Felipe/Documents/Development/rfhisto/js/webgl.js",
+		"/C/Users/Felipe/Documents/Development/rfhisto/js/main.js",
+		"/C/Users/Felipe/Documents/Windows Key/key.txt",
+		"/C/Users/Felipe/Documents/Development/rfhisto/LICENSE",
 		"/C/Users/Felipe/Documents/Research/escritor/hello-world.pdf",
 		"/C/Users/Felipe/Documents/Research/escritor/Modelo_TCC_Caico.pdf",
 		"/C/Users/Felipe/Documents/Development/escritor/abnt.pdf",
@@ -117,8 +174,7 @@
 		"/C/Users/Felipe/Documents/Development/rfhisto/webgl.js/index.html",
 		"/C/Users/Felipe/Documents/Development/bazingatesting/build/stdout.txt",
 		"/C/Users/Felipe/Documents/Development/rfhisto/webgl.js/main.js",
-		"/C/Users/Felipe/Documents/Software/ATV.OFC.2013/ATI.OFC.2013/Instruções.txt",
-		"/C/Users/Felipe/Documents/Windows Key/key.txt"
+		"/C/Users/Felipe/Documents/Software/ATV.OFC.2013/ATI.OFC.2013/Instruções.txt"
 	],
 	"find":
 	{
@@ -136,6 +192,48 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"this",
+			"var ",
+			" |\\n",
+			"vn ",
+			"vn",
+			" |\\n",
+			"[0-9]//",
+			" |\\n",
+			"//[0-9]",
+			"f ",
+			"highp ",
+			"flatten",
+			"translate",
+			"draw",
+			"nMatrix",
+			",,",
+			"\\n",
+			"( |\\n)",
+			"vn",
+			"(\\t| |\\n)*",
+			"\\t*",
+			" *",
+			" |\\n",
+			"shader",
+			"( |\\n)",
+			"f ",
+			"[0-9]//",
+			"( |\\n)",
+			"00000\\n",
+			"00000 ",
+			"vn ",
+			"([0-9])( |\\n)",
+			"f ",
+			"draw",
+			"([0-9])( |\\n)",
+			"f",
+			"([0-9].[0-9])(.|$)",
+			"00000",
+			"number",
+			"Adicionar",
+			"Edit",
+			"Add",
 			"(#[0-9]*)",
 			"panel",
 			"font",
@@ -155,11 +253,38 @@
 			"resize"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": true,
 		"replace_history":
 		[
+			"fatos[alinharCom]",
+			"",
+			",",
+			"",
+			",",
+			"",
+			",",
+			"",
+			",",
+			",$1",
+			"",
+			",$1",
+			"",
+			",$1",
+			"\\n",
+			" ",
+			"",
+			"$1,$2",
+			"",
+			"$1,$2",
+			"",
+			"$1,$2",
+			"",
+			"numero",
+			"Adição",
+			"Edição",
+			"Adicionar",
 			"<span class=\"number\">$1</span>",
 			"sidebar",
 			"Arial",
@@ -174,7 +299,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -182,15 +307,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1474,
+						"buffer_size": 3071,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								937,
-								937
+								1214,
+								1214
 							]
 						],
 						"settings":
@@ -199,25 +324,274 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 427.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": ".gitignore",
+					"file": "js/universo.js",
 					"settings":
 					{
-						"buffer_size": 58,
+						"buffer_size": 694,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								58,
-								58
+								636,
+								636
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "votar.html",
+					"settings":
+					{
+						"buffer_size": 3380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/mat4.js",
+					"settings":
+					{
+						"buffer_size": 35233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4193,
+								4198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2990.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "js/webgl.js",
+					"settings":
+					{
+						"buffer_size": 7135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6504,
+								6504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 36.0,
+						"translation.y": 4319.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/principal.css",
+					"settings":
+					{
+						"buffer_size": 2552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/sidebar.css",
+					"settings":
+					{
+						"buffer_size": 450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								268,
+								268
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/votar.js",
+					"settings":
+					{
+						"buffer_size": 39,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20,
+								20
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "js/sidebar.js",
+					"settings":
+					{
+						"buffer_size": 1361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1067,
+								1067
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/principal.js",
+					"settings":
+					{
+						"buffer_size": 6628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4589,
+								4589
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4034.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/cube.obj",
+					"settings":
+					{
+						"buffer_size": 766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								306,
+								558
 							]
 						],
 						"settings":
@@ -231,168 +605,27 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "vote.html",
+					"buffer": 11,
 					"settings":
 					{
-						"buffer_size": 3292,
+						"buffer_size": 228,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								502,
-								502
+								0,
+								228
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_name": "0.577300,-0.577300,0.577300,-0.577300,-0.577300,0.",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 4,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "css/main.css",
-					"settings":
-					{
-						"buffer_size": 2532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								248,
-								248
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 23.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "css/sidebar.css",
-					"settings":
-					{
-						"buffer_size": 447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								231
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/vote.js",
-					"settings":
-					{
-						"buffer_size": 38,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								36,
-								36
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/sidebar.js",
-					"settings":
-					{
-						"buffer_size": 1347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								293,
-								293
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 85.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "js/home.js",
-					"settings":
-					{
-						"buffer_size": 2229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1578,
-								1578
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1562.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -428,7 +661,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.486081150488,
 			1.0
 		],
 		"rows":
@@ -448,6 +681,26 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"mat4",
+				"js/mat4.js"
+			],
+			[
+				"mat",
+				"js/mat4.js"
+			],
+			[
+				"webgl",
+				"js/webgl.js"
+			],
+			[
+				"webg",
+				"js/webgl.js"
+			],
+			[
+				"web",
+				"js/webgl.js"
+			]
 		],
 		"width": 0.0
 	},
