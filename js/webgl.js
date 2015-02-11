@@ -46,7 +46,8 @@ render = new function () {
 			 vertexNormal: "vertexNormal"},
 			{pMatrix: "pMatrix",
 			 mvMatrix: "mvMatrix",
-			 nMatrix: "nMatrix"});
+			 nMatrix: "nMatrix",
+			 color: "color"});
 			window.onresize();
 		} else {
 			this.fail();

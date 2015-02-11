@@ -25,8 +25,9 @@ var alinharCom = 0;
 var camP = [null, null, null];
 var camR = [null, null, null];
 var camD = [null, null, null];
-var transTime = 10;
+var transTime = 1;
 var keySpace = false;
+var chegando = false;
 
 // Função principal
 function inicia () {
@@ -47,6 +48,9 @@ function inicia () {
 		if (event.which == 38) { // 38 = Seta de cima
 			setCam(alinharCom+1);
 		}
+		if (event.which == 40) { // 37 = Seta de baixo
+			setCam(alinharCom-1);
+		}
 		if (event.which == 32) {
 			keySpace = true;
 		}
@@ -59,11 +63,15 @@ function inicia () {
 	}
 
 	function mostraRodape () {
+		if (fatos[alinharCom] && !fatos[alinharCom].mostrandoNome)
+			fatos[alinharCom].mostraInformacao();
 		$("#rodape").fadeIn(400);
 		$(".botaovoltar").fadeOut(400);
 	}
 
 	function retiraRodape () {
+		if (fatos[alinharCom])
+			fatos[alinharCom].retiraInformacao();
 		$("#rodape").fadeOut(400);
 		$(".botaovoltar").fadeIn(400);
 	}
@@ -233,7 +241,7 @@ function inicia () {
 		1,true
 	);
 
-	render.clearColor ([1,0.8,0.2,1]);
+	render.clearColor ([0.1,0.2,0.3,1]);
 
 	render.viewport();
 
@@ -249,15 +257,22 @@ function inicia () {
 		var xymax = distancia/Math.sin(3.14/4);
 		var prop = render.canvas.width/render.canvas.height;
 
-		fatos.push(new Fato([(Math.random()*xymax-xymax/2),
-							 (Math.random()*xymax-xymax/2)/prop,
-							 distancia]));
+		var x = Math.cos(i)*5;
+		var y = i/5 	*20;
+		var z = Math.sin(i)*5;
+
+		fatos.push(new Fato([x,y,z]));
 	}
 
 	setCam(0);
 }
 
 function setCam (num) {
+	if (fatos[alinharCom]) {
+		fatos[alinharCom].retiraInformacao();
+		fatos[alinharCom].retiraNome();
+	}
+
 	alinharCom = num;
 
 	var oX, oY, oZ;
@@ -284,6 +299,8 @@ function setCam (num) {
 	camR[1] = new Linear(t, t+transTime, rY, fatos[alinharCom].r[1])
 
 	camD[2] = new Linear(t, t+transTime/4, dZ, 50);
+
+	chegando = true;
 }
 
 // Desenha com WebGL
@@ -318,8 +335,18 @@ function draw () {
 		fatos[f].draw();
 	}
 
-	if (t > camD[2].x0+transTime/4*3 && camD[2].v(t) == 50 && !keySpace) {
-		camD[2] = new Linear(t, t+transTime/4, camD[2].v(t), 2);
+	if (t > camD[2].x0+transTime/4*3 && camD[2].v(t) == 50) {
+		if (keySpace) {
+			camD[2] = new Linear(t, t+transTime/4, camD[2].v(t), 1.8);
+			fatos[alinharCom].retiraNome();
+		} else if (t > camD[2].x0+transTime) {
+			fatos[alinharCom].mostraNome();
+		}
+	}
+
+	if (t > camD[2].x0+transTime/4 && camD[2].v(t) == 1.8 && chegando) {
+		fatos[alinharCom].mostraInformacao();
+		chegando = false;
 	}
 
 	setTimeout (draw, 1000/60);
