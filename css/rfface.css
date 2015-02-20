@@ -1,0 +1,441 @@
+@font-face {
+	font-family: quicksand;
+	src: url('../fonts/quicksand.regular.otf');
+}
+
+body {
+	background: #1273ad;
+
+	margin: 0;
+	height: 100%;
+
+	font-family: quicksand;
+
+	font-size: 12px;
+
+	overflow: hidden;
+}
+
+.f-opcoes {
+	position: absolute;
+	left: 50%;
+	margin-left: -16px;
+}
+
+.f-opcoes:hover {
+	background: rgba(255,255,255, 0.5);
+}
+
+.f-opcoes:active {
+	background: rgba(255,255,255, 1);
+}
+
+.f-fechar {
+	width: 18px;
+	height: 18px;
+	background: red;
+
+	border-radius: 9px;
+
+	background-color: #ffef80;
+
+	position: absolute;
+	top: 12px;
+
+	right: 12px;
+}
+
+.f-fechar:hover {
+	background-image: url('../icons/esconder.png');
+}
+
+.f-fechar:active {
+	background-color: #ffc080;
+	background-image: url('../icons/esconder.png');
+}
+
+.f-barra {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 32px;
+	width: 100%;
+
+	background: rgba(0,0,0,0.5);
+}
+
+.f-lista {
+	list-style: none;
+	padding: 0;
+}
+
+.f-painel {
+	position: absolute;
+	height: 80%;
+	width: 90%;
+	left: 5%;
+
+	display: none;
+
+	background: rgba(255,255,255, 0.5);
+
+	overflow: auto;
+
+	text-align: center;
+
+	border-radius: 12px;
+}
+
+.f-texto {
+	margin-bottom: 12px;
+	margin-top: 12px;
+
+	font-family: inherit;
+}
+
+.f-entrada {
+	background: rgba(255,255,255,0.5);
+
+	border-radius: 8px;
+
+	font-size: 4em;
+
+	border: none;
+	/*border-bottom: 1px solid black;*/
+
+	text-align: center;
+
+	margin-bottom: 12px;
+
+	font-family: inherit;
+
+	width: 80%;
+}
+
+.f-entrada-texto {
+	background: rgba(255,255,255,0.5);
+
+	border-radius: 8px;
+
+	font-size: 1em;
+
+	border: none;
+	/*border-bottom: 1px solid black;*/
+
+	text-align: left;
+
+	margin-bottom: 12px;
+
+	height: 80%;
+	width: 80%;
+
+	resize: none;
+
+	font-family: inherit;
+}
+
+.f-botao {
+	font-size: 4em;
+
+	border-radius: 8px;
+
+	background: rgba(255,255,255,0.5);
+	border: 0;
+
+	text-align: center;
+
+	width: 80%;
+
+	margin-bottom: 12px;
+
+	font-family: inherit;
+
+	cursor: pointer;
+}
+
+.f-botao-pequeno {
+	width: 50px;
+	height: 50px;
+
+	border-radius: 25px;
+
+	background-color: rgba(128,255,128,0.5);
+
+	cursor: pointer;
+}
+
+.f-botao-pequeno:hover {
+	background-image: url('../icons/register.png');
+}
+
+.f-botao-pequeno:active {
+	background-color: rgba(200,255,200,1.0);
+}
+
+.f-espaco {
+	width: 100%;
+	height: 72px;
+
+	border-top: 4px solid #f0d0a0;
+}
+
+.f-pequeno {
+	font-size: 2em;
+}
+
+.f-paragrafo {
+	margin-left: 10%;
+	width: 80%;
+	text-indent: 10%;
+	text-align: justify;
+}
+
+.f-grande {
+	font-size: 4em;
+}
+
+.f-alinhar {
+	margin-left: 10%;
+}
+
+
+.f-botao:hover {
+	background: white;
+	border: 0;
+}
+
+.f-botao:active {
+	background: #80c0ff;
+	border: 0;
+}
+
+.f-desabilita {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0,0,0,0.5);
+
+	display: none;
+}
+
+.f-desabilita-logo {
+	position: absolute;
+
+	width: 256px;
+
+	top: 50%;
+	left: 50%;
+
+	margin-left: -128px;
+	margin-top: -56px;
+}
+
+.f-voltar {
+	position: absolute;
+
+	top: 50%;
+	left: 0;
+
+	margin-top: -25px;
+
+	width: 50px;
+	height: 50px;
+
+	background-image: url('../icons/goback.png');
+
+	cursor: pointer;
+}
+
+.f-voltar:hover {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.f-vetorauto {
+	background: rgba(255,255,255,0.2);
+
+	border: none;
+
+	text-align: center;
+
+	margin-bottom: 12px;
+
+	list-style: none;
+
+	width: 80%;
+	margin-left: 10%;
+
+	padding-bottom: 6px;
+	padding-top: 6px;
+
+	clear: both;
+}
+
+.f-vetorauto-opcoes {
+	background: #80c0ff;
+
+	width: 80%;
+	margin-left: 10%;
+	list-style: none;
+
+	padding: 0;
+
+	font-size: 2em;
+
+	position: absolute;
+}
+
+.f-vetorauto-opcoes>li:hover {
+	background: rgba(255,255,255,0.5);
+	cursor: pointer;
+}
+
+.f-vetorauto-texto {
+	background: rgba(255,255,255,0.5);
+
+	font-size: 2em;
+
+	border: none;
+	border-bottom: 1px solid black;
+
+	text-align: center;
+
+	width: 80%;
+
+	font-family: inherit;
+}
+
+.f-vetorauto-elemento {
+	background: rgba(255,255,255,0.2);
+	border-radius: 8px;
+	padding: 4px;
+	font-size: 16px;
+	margin-left: 4px;
+	margin-top: 2px;
+	float: left;
+}
+
+.f-vetor {
+
+}
+
+.f-clear {
+	clear: both;
+}
+
+.f-deletar {
+	margin-left: 2px;
+
+	width: 18px;
+	height: 18px;
+	background: red;
+
+	border-radius: 9px;
+
+	background-color: #ff8080;
+
+	float: right;
+}
+
+.f-deletar:hover {
+	background-image: url('../icons/delete.png');
+}
+
+.f-deletar:active {
+	background-image: url('../icons/delete.png');
+	background-color: #ff5050;
+}
+
+.f-logout {
+	float: right;
+	margin-right: 6px;
+}
+
+/* Menu principal */
+.menu-elemento {
+	position: absolute;
+
+	top: 50%;
+	margin-top: -50px;
+
+	left: 50%;
+	margin-left: -50px;
+
+	background: transparent;
+
+	border: 1px solid black;
+
+	width: 100px;
+	height: 100px;
+
+	border-radius: 51px;
+}
+
+.menu-elemento:hover {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.voto {
+	background-image: url('../icons/vote.png');
+}
+
+.adicionar {
+	background-image: url('../icons/add.png');
+	cursor: pointer;
+}
+
+.editar {
+	background-image: url('../icons/edit.png');	
+	cursor: pointer;
+}
+
+.menu-texto {
+	color: black;
+
+	position: absolute;
+	width: 100px;
+	margin-left: -50px;
+
+	text-align: center;
+	
+	bottom: -46px;
+
+	font-size: 1em;
+}
+
+#menu-a {
+	position: absolute;
+
+	height: 100%;
+	width: 33.3%;
+
+	left: 0;
+}
+
+#menu-b {
+	position: absolute;
+
+	height: 100%;
+	width: 33.3%;
+
+	left: 33.3%;
+}
+
+#menu-c {
+	position: absolute;
+
+	height: 100%;
+	width: 33.3%;
+
+	left: 66.6%;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}

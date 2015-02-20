@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="shortcut icon" href="icons/logo-pequeno.ico" type="image/x-icon" />
+
+		<meta charset="UTF-8" />
+		<title>ιστορία</title>
+	
+		<style>
+			/* CSS principal da interface */
+			@import url('css/rfface.css');
+		</style>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/fato.js"></script>
+		<script src="js/rfface.js"></script>
+	</head>
+
+	<body onload="inicia();">
+		<!-- Todas as classes da rfface começam com 'f-' -->
+
+		<ul id="dados" class="f-lista">
+			<!-- Criar fato -->
+			<li class="f-painel">
+				<div class="f-texto">Nome</div>
+				<input id="fato-criar-nome" type="text" class="f-entrada" />
+
+				<div class="f-texto">Texto</div>
+				<textarea id="fato-criar-texto" class="f-entrada-texto"></textarea>
+		
+				<div class="f-texto">Fatos relacionados</div>
+				<div class="f-vetor" id="fato-criar-ftr" data-conector="conector_criar_fato">
+					<input type="text" class="f-vetorauto-texto">
+					</input>
+					<ul class="f-vetorauto-opcoes">
+					</ul>
+					<div class="f-vetorauto">
+						<div class="f-clear">
+						</div>
+					</div>
+				</div>
+	
+				<input value="Criar" type="submit" class="f-botao" onclick="adiciona_fato();"/>
+
+				<div class="f-fechar" onclick="rfface.mostra('dados', 2)" title="Cancelar">
+				</div>
+			</li>
+
+			<!-- Editar fato -->
+			<li class="f-painel">
+				<div class="f-texto">Nome</div>
+				<input id="fato-editar-nome" type="text" class="f-entrada" />
+				<div class="f-texto">Texto</div>
+				<textarea id="fato-editar-texto" class="f-entrada-texto"></textarea>
+				<div class="f-texto">Fatos relacionados</div>
+				<div class="f-vetor" id="fato-editar-ftr" data-conector="conector_editar_fato">
+					<input type="text" class="f-vetorauto-texto">
+					</input>
+					<ul class="f-vetorauto-opcoes">
+					</ul>
+					<div class="f-vetorauto">
+						<div class="f-clear">
+						</div>
+					</div>
+				</div>		
+				<input value="Salvar" type="submit" class="f-botao" onclick="edita_fato();"/>
+			
+				<div class="f-fechar" onclick="rfface.mostra('dados', 2)" title="Cancelar">
+				</div>
+			</li>
+
+			<!-- Menu principal -->
+			<li class="f-painel">
+				<!-- Primeiro elemento do menu (votar) -->
+				<div id="menu-a">
+					<!--<a href="votar.html">-->
+						<div class="menu-elemento voto">
+							<span class="menu-texto">
+								Votar
+							</span>
+						</div>
+					<!--</a>-->
+				</div>
+
+				<!-- Segundo elemento do menu (adicionar) -->
+				<!-- Ainda por fazer -->
+				<div id="menu-b">
+					<div class="menu-elemento adicionar" onclick="abre_criacao();">
+						<span class="menu-texto">
+							Adicionar
+						</span>
+					</div>
+				</div>
+
+				<!-- Terceiro elemento do menu (editar) -->
+				<!-- Ainda por fazer -->
+				<div id="menu-c">
+					<div class="menu-elemento editar" onclick="abre_edicao();">
+						<span class="menu-texto">
+							Editar
+						</span>
+					</div>
+				</div>
+
+				<div class="f-fechar" onclick="rfface.escondeTodos('dados')">
+				</div>
+			</li>
+
+			<li class="f-painel">
+				<div class="f-texto f-grande" title="istoría">
+					ιστορία - istoría
+				</div>
+
+				<div class="f-texto f-pequeno f-paragrafo">
+					Bem vindo ao <span title="istoría">ιστορία</span>! Aqui podemos reconstruir a história! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+				</div>
+
+				<div class="f-botao f-alinhar" onclick="rfface.escondeTodos('dados');">
+					Entendido!
+				</div>
+			</li>
+		</ul>
+
+		<div class="f-barra">
+			<img src="icons/logo.png">
+			</img>
+
+			<img src="icons/opcoes.png" class="f-opcoes" onclick="rfface.mostra('dados', 2);" />
+
+			<a href="logout.php" title="Sair">
+				<img src="icons/logout.png" class="f-logout" />
+			</a>
+		</div>
+
+		<div class="f-desabilita">
+			<img src="icons/logo-grande.png" class="f-desabilita-logo">
+			</img>
+		</div>
+	</body>
+</html>

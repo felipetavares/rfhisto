@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<link rel="shortcut icon" href="icons/logo-pequeno.ico" type="image/x-icon" />
+
+		<meta charset="UTF-8" />
+		<title>ιστορία - login</title>
+	
+		<style>
+			/* CSS principal da interface */
+			@import url('css/rfface.css');
+			/* CSS específico desta página */
+			@import url('css/login.css');
+		</style>
+
+		<script src="js/jquery.js"></script>
+		<script src="js/login.js"></script>
+		<script src="js/rfface.js"></script>
+	</head>
+
+	<body onload="inicia();">
+		<!-- Todas as classes da rfface começam com 'f-' -->
+
+		<ul id="dados" class="f-lista">
+			<!-- Login -->
+			<li class="f-painel">
+				<form action="index.php" method="post">
+					<img id="login-logo" src="icons/logo-medio.png" />
+
+					<div id="login-centro">
+						<div id="login-centro-margem">
+							<div class="nome-usuario">
+								<img id="login-imagem" src="icons/user.png" />
+								<input name="login-nome" id="login-nome" type="text" class="f-entrada" />
+							</div>
+
+							<div class="nome-usuario">
+								<img id="login-imagem" src="icons/lock.png" />
+								<input name="login-senha" type="password" class="f-entrada" />
+							</div>
+
+							<div class="nome-usuario">
+								<input value="Logar" type="submit" class="f-botao" />
+							</div>
+
+							<div class="f-botao-pequeno f-alinhar" title="Cadastrar" onclick="rfface.mostra('dados', 1);">
+ 							</div>
+						</div>
+					</div>
+				</form>
+			</li>
+
+			<!-- Registro -->
+			<li class="f-painel">
+				<form action="index.php" method="post">
+					<div class="f-texto">Nome de usuário</div>
+					<input name="cadastro-nome" type="text" class="f-entrada" />
+					
+					<div class="f-texto">E-mail</div>
+					<input name="cadastro-email" type="email" class="f-entrada" />
+
+					<div class="f-texto">Senha</div>
+					<input name="cadastro-senha" type="password" class="f-entrada" />
+
+					<div class="f-texto">Confirma Senha</div>
+					<input name="cadastro-senha-confirma" type="password" class="f-entrada" />
+	
+					<div class="f-espaco"> </div>
+					<input value="Cadastrar" type="submit" class="f-botao" />
+				</form>
+
+
+				<div class="f-fechar" onclick="rfface.mostra('dados', 0)" title="Cancelar">
+				</div>
+			</li>
+		</ul>
+
+		<div class="f-barra">
+			<img src="icons/logo.png">
+			</img>
+		</div>
+
+		<div class="f-desabilita">
+		</div>
+	</body>
+</html>

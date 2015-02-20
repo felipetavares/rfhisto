@@ -1,0 +1,31 @@
+#login-logo {
+	position: absolute;
+	top: 12px;
+	margin-left: -104px;
+	left: 50%;
+}
+
+#login-imagem {
+	position: absolute;
+	left: 10%;
+
+	margin-left: 4px;
+	margin-top: 4px;
+}
+
+#login-centro {
+	top: 50%;
+	width: 100%;
+	position: absolute;
+
+	margin-top: -6em;
+}
+
+#login-centro-margem {
+	position: relative;
+	margin-top: -28px;
+}
+
+.nome-usuario {
+	position: relative;
+}
